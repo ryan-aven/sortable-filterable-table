@@ -1,0 +1,723 @@
+<base href="https://www.eda.gov">
+<!DOCTYPE html>
+<!--[if lt IE 7]>    test  <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!-- InstanceBegin template="/Templates/Section - EDI.dwt" codeOutsideHTMLIsLocked="false" --> <!--<![endif]-->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--THIS IS WHERE THE TABLE CSS CODE RESIDES-->
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- InstanceBeginEditable name="doctitle" -->
+		<title>Economic Development Integration (EDI) | U.S. Economic Development Administration</title>
+		<!-- InstanceEndEditable -->
+
+	<!-- InstanceBeginEditable name="head" -->
+		<meta name="description" content="">
+		<!-- InstanceEndEditable -->
+
+	<link rel="stylesheet" href="/css/foundation.min.css">
+	<link rel="stylesheet" href="/css/motion-ui.css">
+	<link rel="stylesheet" href="/css/eda-styles.css">
+
+	<link rel="icon" type="image/png" href="/img/favicon.png" />
+	
+	<link rel="stylesheet" href="/css/nivo-slider/nivo-themes/default/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/css/nivo-slider/style.css" type="text/css" media="screen" />
+
+		<!-- BEGIN LEAVE NOTICE CODE -->
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.leaveNotice.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	  // Mark external (non-nist.gov) A tags with class "external"
+	  //If the adress start with https and ends with nist.gov
+	  var re_nist = new RegExp('^https?:\/\/((^\/)*\.)*eda\\.gov(\/|$)');
+	  //Regex to find address that start with https
+	  var re_absolute_address = new RegExp('^((https?:)?\/\/)');
+	  $("a").each(function(){
+		var url=$(this).attr('href');
+		if(re_nist.test(url) || !re_absolute_address.test(url)){
+		  $(this).addClass('local');
+		}else{
+		  //This a href appears to be external, so tag it
+		  $(this).addClass('external');
+		}
+	  });
+	  // Add leaveNotice to external A elements
+	  $('a.external').leaveNotice({
+			siteName: 'the NIST fork of the leaveNotice jQuery plugin',
+	  });
+	});
+	</script>
+	<link rel="stylesheet" type="text/css" href="/css/jquery.leaveNotice.css" />
+	
+		<!-- END LEAVE NOTICE CODE -->
+
+
+		<!-- BEGIN GOOGLE ANALYTICS -->
+
+		<!-- GSA GA Code -->
+		<script type="text/javascript" src="/js/federated-analytics.js"></script>
+		<!-- End GSA GA Code -->
+		
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-24906231-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+		<script type="text/javascript">
+		  function recordOutboundLink(link, category, action) {
+			_gat._getTrackerByName()._trackEvent(category, action);
+			setTimeout('document.location = "' + link.href + '"', 100);
+		  }
+		</script>
+		
+		<!-- END GOOGLE ANALYTICS -->
+        
+        <!-- LINKEDIN ANALYTICS -->
+        
+<script type="text/javascript">
+_linkedin_data_partner_id = "86137";
+</script><script type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=86137&fmt=gif" />
+</noscript>
+        
+        <!-- END LINKEDIN ANALYTICS -->
+
+
+		<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+
+<!--THIS IS WHERE THE JAVASCRIPT RESIDES-->
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  // Declare variables 
+  var input = document.getElementById("myInput");
+  var filter = input.value.toUpperCase();
+  var table = document.getElementById("myTable");
+  var trs = table.tBodies[0].getElementsByTagName("tr");
+
+  // Loop through first tbody's rows
+  for (var i = 0; i < trs.length; i++) {
+
+    // define the row's cells
+    var tds = trs[i].getElementsByTagName("td");
+
+    // hide the row
+    trs[i].style.display = "none";
+
+    // loop through row cells
+    for (var i2 = 0; i2 < tds.length; i2++) {
+
+      // if there's a match
+      if (tds[i2].innerHTML.toUpperCase().indexOf(filter) > -1) {
+
+        // show the row
+        trs[i].style.display = "";
+
+        // skip to the next row
+        continue;
+
+      }
+    }
+  }
+
+}
+function sortTable(n) {
+	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	  table = document.getElementById("myTable");
+	  switching = true;
+	  // Set the sorting direction to ascending:
+	  dir = "asc";
+	  /* Make a loop that will continue until
+	  no switching has been done: */
+	  while (switching) {
+		// Start by saying: no switching is done:
+		switching = false;
+		rows = table.rows;
+		/* Loop through all table rows (except the
+		first, which contains table headers): */
+		for (i = 1; i < (rows.length - 1); i++) {
+		  // Start by saying there should be no switching:
+		  shouldSwitch = false;
+		  /* Get the two elements you want to compare,
+		  one from current row and one from the next: */
+		  x = rows[i].getElementsByTagName("TD")[n];
+		  y = rows[i + 1].getElementsByTagName("TD")[n];
+		  /* Check if the two rows should switch place,
+		  based on the direction, asc or desc: */
+		  if (dir == "asc") {
+			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+			  // If so, mark as a switch and break the loop:
+			  shouldSwitch = true;
+			  break;
+			}
+		  } else if (dir == "desc") {
+			if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+			  // If so, mark as a switch and break the loop:
+			  shouldSwitch = true;
+			  break;
+			}
+		  }
+		}
+		if (shouldSwitch) {
+		  /* If a switch has been marked, make the switch
+		  and mark that a switch has been done: */
+		  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+		  switching = true;
+		  // Each time a switch is done, increase this count by 1:
+		  switchcount ++;
+		} else {
+		  /* If no switching has been done AND the direction is "asc",
+		  set the direction to "desc" and run the while loop again. */
+		  if (switchcount == 0 && dir == "asc") {
+			dir = "desc";
+			switching = true;
+		  }
+		}
+	  }
+	}
+</script>
+
+
+<script type="text/javascript">
+// Copyright 2006-2007 javascript-array.com
+
+var timeout	= 500;
+var closetimer	= 0;
+var ddmenuitem	= 0;
+
+// open hidden layer
+function mopen(id)
+{	
+	// cancel close timer
+	mcancelclosetime();
+
+	// close old layer
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+	// get new layer and show it
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+
+// close layer when click-out
+document.onclick = mclose; 
+</script>
+
+
+
+	</head>
+<body>
+		<!-- FACEBOOK CODE -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=170815576315754";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		<!-- END FACEBOOK CODE -->
+
+
+		<p class="skipToContent">Jump to <a href="#mainContent" title="Jump to main content">main content</a>.</p>
+		
+		
+<!-- Start Top Bar -->
+
+
+
+
+<div class="top-bar" id="example-menu">
+	<div class="top-bar-left">
+		<ul style="background-color: transparent;">
+		<a href="/"><img src="/img/eda-logo-white-bureau.png" alt="EDA Logo" width="380" height="127" /></a>
+		</ul>
+	</div>
+	<div class="top-bar-right">
+		<ul class="menu" style="background-color: transparent;">
+			<li>
+				<form accept-charset="UTF-8" action="https://search.eda.gov/search" id="search_form" method="get">
+					<input name="utf8" type="hidden" value="✓">
+					<input id="affiliate" name="affiliate" type="hidden" value="eda">
+					<input autocomplete="off" class="usagov-search-autocomplete" id="query" name="query" type="text" placeholder="Search" style="float: left;">
+					<button type="submit" style="border: 0; background-color: #2199e8;">
+						<img src="/img/magnifying-glass.png" width="64" height="40" alt="submit" />
+					</button>
+				</form>
+			</li>
+			<p align="right" style="padding-right: 15px; padding-top: 5px;">
+				<a href="http://www.facebook.com/eda.commerce"><img src="/img/social/Facebook-color.png" width="30px" height="30px" alt="Facebook icon" /></a>
+				<a href="https://twitter.com/US_EDA"><img src="/img/social/Twitter-color.png" width="30px" height="30px" alt="Twitter icon" /></a>
+				<a href="https://www.linkedin.com/company/us-department-of-commerce-economic-development-administration"><img src="/img/social/Linkedin-color.png" width="30px" height="30px" alt="LinkedIn icon" /></a>
+				<a href="https://www.youtube.com/user/EDACommerce"><img src="/img/social/YouTube-color.png" width="30px" height="30px" alt="YouTube icon" /></a>
+			</p>
+		 </ul>
+	</div>
+
+	<div class="row">
+		<div class="column small-12">
+
+			<div class="navbar" style="background-color: transparent;">
+			  <div class="dropdown">
+			  <button class="dropbtn"><a href="/about/">About</a>
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="/about/" title="About">About</a>
+				  <a href="/about/leadership/" title="Leadership">Leadership</a>
+				  <a href="/about/investment-priorities/" title="Investment Priorities">Investment Priorities</a>
+				  <a href="/edi/" title="Economic Development Integration">Economic Development Integration</a>
+				  <a href="/oie/" title="Innovation and Entrepreneurship">Innovation and Entrepreneurship</a>
+				  <a href="/disaster-recovery/" title="EDA and Disaster Recovery">Disaster Recovery</a>
+				  <a href="/performance/" title="EDA Performance Measurement and Program Evaluation">EDA Performance Measurement and Program Evaluation</a>
+				  <a href="/careers/" title="EDA Job Opportunities">EDA Job Opportunities</a>
+				  <a href="/privacy/" title="EDA's Privacy Policy">EDA's Privacy Policy</a>
+				</div>
+			  </div> 
+			  <div class="dropdown">
+				<button class="dropbtn"><a href="/funding-opportunities/">Funding Opportunities</a> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="/funding-opportunities/" title="Funding Opportunities">Funding Opportunities</a>
+				  <a href="/funding-opportunities/previous/" title="Previous Funding Opportunities">Previous Funding Opportunities</a>
+				</div>
+			  </div> 
+			  <div class="dropdown">
+				<button class="dropbtn"><a href="/programs/">Programs</a> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="/programs/" title="Programs">Programs</a>
+				  <a href="/programs/eda-programs/" title="EDA Programs">EDA Programs</a>
+				  <a href="/programs/multi-agency/" title="Multi-Agency Initiatives">Multi-Agency Initiatives</a>
+				  <a href="/disaster-recovery/" title="EDA and Disaster Recovery">EDA and Disaster Recovery</a>
+				  <a href="/programs/university-centers/" title="University Centers">University Centers</a>
+				</div>
+			  </div> 
+			  <div class="dropdown">
+				<button class="dropbtn"><a href="/success-stories/">Success Stories</a> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="/success-stories/" title="Success Stories">Success Stories</a>
+				  <a href="/success-stories/share/" title="Share Your Story">Share Your Story</a>
+				</div>
+			  </div> 
+			  <div class="dropdown">
+				<button class="dropbtn"><a href="/tools/">Tools</a> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="/tools/" title="Tools">Tools</a>
+				  <a href="/tools/research-reports/" title="Research Reports">Research Reports</a>
+				  <a href="/tools/grantee-information/" title="Grantee Information">Grantee Information</a>
+				</div>
+			  </div> 
+			  <div class="dropdown">
+				<button class="dropbtn"><a href="/news/">Newsroom</a> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="/news/" title="Newsroom">Newsroom</a>
+				  <a href="/news/blogs/" title="Blogs">Blogs</a>
+				  <a href="/news/press-releases/" title="Press Releases">Press Releases</a>
+				  <a href="/news/speeches/" title="Speeches/Remarks">Speeches/Remarks</a>
+				  <a href="/news/newsletters/" title="Newsletters">Newsletters</a>
+				  <a href="/news/media/" title="Media">Media</a>
+				</div>
+			  </div> 
+			  <div class="dropdown">
+				<button class="dropbtn"><a href="/contact/">Contact</a> 
+				  <i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content">
+				  <a href="/contact/" title="Contact EDA">Contact EDA</a>
+				  <a href="/success-stories/share/" title="Share Your Story">Share Your Story</a>
+				</div>
+			  </div> 
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+
+
+		  <!-- InstanceBeginEditable name="Breadcrumbs" -->
+<nav aria-label="You are here:" role="navigation" style="padding-left: 15px;">
+  <ul class="breadcrumbs">
+    <li><a href="/">Home</a></li>
+    <!--li class="disabled">Disabled Page</li-->
+    <li style="text-transform: none;">
+      <span class="show-for-sr">Current: </span>
+		 	Economic Development Integration (EDI)
+	  </li>
+  </ul>
+</nav>
+		  <!-- InstanceEndEditable -->
+
+
+<div class="row">
+	<div class="large-9 large-push-3 columns mainBodyContent">
+	  <!-- main content -->
+
+
+				<section id="mainContent">
+<h1><!-- InstanceBeginEditable name="Page Title" -->
+                    Economic Development Integration (EDI)
+					<!-- InstanceEndEditable --></h1>
+
+<!-- InstanceBeginEditable name="Page Content" -->
+<p>This is a paragraph written to describe the purpose of this page. It includes a description of what this table is, how to use it, etc.</p>
+
+<p>You can click on the column headers to sort by that column. 1 click = ascending sort, 2 clicks = descending sort. Ryan is really good at MacGyvering script to suit his aims.</p>
+
+<h2>EDI Matrix Page</h2>
+
+<!--HERE IS WHERE MY TABLE RESIDES-->
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search this table..." title="Type in a search term">
+
+<table id="myTable">
+	<thead>
+		<tr class="header">
+	  		<th onclick="sortTable(0)" style="width:20%;">Program Title</th>
+			<th onclick="sortTable(1)"style="width:10%;">Federal Agency/Office</th>
+	  		<th onclick="sortTable(2)"style="width:10%;">CFDA Number</th>
+	  		<th onclick="sortTable(3)"style="width:10%;">More Information<br><i>(link)</i></th>
+	  		<th onclick="sortTable(4)"style="width:10%;">Type(s) of Assistance</th>
+	  		<th onclick="sortTable(5)"style="width:10%;">Areas Served</th>
+	  		<th onclick="sortTable(6)"style="width:10%;">Open Date</th>
+	  		<th onclick="sortTable(7)"style="width:10%;">Close Date</th>
+	  		<th onclick="sortTable(8)"style="width:20%;">Keyword(s)</th>
+		</tr>
+	</thead>
+	<tr>
+	  <td>Appalachian Local Development District Assistance</td>
+	  <td>ARC(?)</td>
+	  <td>23.009</td>
+	  <td><a>link</a></td>
+	  <td>Grant and Technical Assistance</td>
+	  <td>Rural</td>
+	  <td>March 2020</td>
+	  <td>Ongoing</td>
+	  <td>Rural assistance; farm grants</td>
+	</tr>
+	<tr>
+		<td>Dallas Local Development District Assistance</td>
+		<td>EDA</td>
+		<td>24.012</td>
+		<td><a>link</a></td>
+		<td>Technical Assistance</td>
+		<td>Urban</td>
+		<td>May 2020</td>
+		<td>December 2020</td>
+		<td>capacity building; construction; entrepreneurship</td>
+	</tr>
+	<tr>
+		<td>New Mexico Tribal Fund</td>
+		<td>BIA</td>
+		<td>12.993</td>
+		<td><a>link</a></td>
+		<td>Grant</td>
+		<td>Rural</td>
+		<td>June 2012</td>
+		<td>Ongoing</td>
+		<td>Rural assistance; tribal affairs; loans; revolving loan funds</td>
+	</tr>
+	<tr>
+		<td>EDA Planning Grants</td>
+		<td>EDA</td>
+		<td>18.209</td>
+		<td><a>link</a></td>
+		<td>Grant and Technical Assistance</td>
+		<td>Both</td>
+		<td>March 2020</td>
+		<td>December 2020</td>
+		<td>planning and capacity building</td>
+	  </tr>
+  </table>
+
+
+
+<h2>Contact Us</h2>
+
+<p>If you have questions or would like more information about the mission and function of EDI, email the Economic Development Integration staff at <a href="mailt:edi@eda.gov">edi@eda.gov</a>, find your <a href="/edi/contact/" title="Regional Integrator Contact">Regional Integrator Contact</a> or contact:</p>  
+
+<p align="center">Douglass Lynott, Director, Economic Development Integration<br />
+Economic Development Administration<br />
+U.S. Department of Commerce<br />
+1401 Constitution Avenue NW, Room 71014<br />
+Washington DC 20230<br />
+Phone: (202) 482-5549</p>
+
+
+
+
+<!-- InstanceEndEditable -->
+
+			</section>
+	  <!-- END main content -->
+	</div>
+
+	<div class="large-3 large-pull-9 columns">
+    <!-- left sidebar -->
+
+		<div class="inThisSection">
+		
+		
+		<!-- InstanceParam name="page" type="text" value="edi" -->
+		
+		
+			<h1>Economic Development Integration (EDI)</h1>
+
+			<ul>
+				<li><a href="/edi/" title="EDI Background">EDI Background</a></li>
+				<li><a href="/edi/what-is-edi/" title="What Is EDI?">What Is EDI?</a></li>
+				<li><a href="/edi/reds/" title="Regional Economic Diversification Summits (REDS)">Regional Economic Diversification Summits (REDS)</a></li>
+				<li><a href="/edi/planning/" title="Streamlined, Comprehensive Strategic Planning">Streamlined, Comprehensive Strategic Planning</a></li>
+				<li><a href="/edi/assistance/" title="Federal Assistance for Economic Development">Federal Assistance for Economic Development</a></li>
+				<li><a href="/edi/resources/" title="Economic Development Integration Tools and Resources">Economic Development Integration Tools and Resources</a></li>
+				<li><a href="/edi/partners/" title="Economic and Community Development Partners">Economic and Community Development Partners</a></li>
+			</ul>
+			
+		
+			
+		</div>
+
+
+
+		<div class="usefulLinks">
+		
+		
+		
+
+			
+		
+
+		</div>
+		
+
+<!-- LEFT SIDE BUTTONS -->
+
+		<a role="button" href="/resources/" class="button sidebarButton" style="width: 100%;">Resource Directory</a>
+
+		<a role="button round" href="/disaster-recovery/" class="button sidebarButton" style="width: 100%;">Disaster Recovery</a>
+
+		<a role="button round" href="/annual-reports/" class="button sidebarButton" style="width: 100%;">Annual Reports</a>
+
+		<a role="button" href="https://public.govdelivery.com/accounts/USEDA/subscriber/new" class="button sidebarButton" style="width: 100%;">Stay Connected<br />
+		<span style="font-style: italic; font-size: 11px;font-weight: normal;">(Subscribe to EDA's monthly e-newsletter)</span></a>
+
+<!-- END LEFT SIDE BUTTONS -->
+
+
+	<!-- END left sidebar -->
+	</div>
+</div>
+
+
+	<!-- InstanceBeginEditable name="Archive" -->
+					<!-- InstanceEndEditable -->
+
+
+
+<footer class="footer-distributed">
+
+<div class="row column">
+	<div class="column small-12 medium-4" align="center" style="margin-bottom: 25px;">
+		
+		<form action="https://public.govdelivery.com/accounts/USEDA/subscriber/qualify" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="w2gt5z/Nyemurtr0FHs4laWgYZifOOW6nSQDanssIDyjI3JR010wLIq6+2Cfg9Nh2ON297/k3qxLykdsE0HiUw==" />
+
+			<fieldset id='quick_subscribe_new'>
+
+				<ol class='form'>
+		
+					<h3>Stay Connected: Join EDA’s Mailing List Today!</h3>
+
+					<li class="email_fields" style="display: block">
+						<input type="text" name="email" id="email" class="long" placeholder="joe.smith@company.com"  />
+					</li>
+				</ol>
+
+				<div class="button_panel">
+					<input type="submit" name="commit" value="Submit" class="button" />
+					<input type="button" value="Cancel" class="button" />
+				</div>
+			</fieldset>
+		</form>
+		
+	</div>
+	<div class="column small-12 medium-4" align="center" style="margin-bottom: 25px;">
+		<a href="/"><img src="/img/eda-seal.png" width="125" height="125" alt="EDA Seal" /></a>
+
+	</div>
+	<div class="column small-12 medium-4" align="center" style="margin-bottom: 25px;">
+
+		<h3>Navigate</h3>
+
+
+<div class="row column">
+	<div class="column small-12 medium-6" align="center" style="margin-left: -15px;">
+		<p style="text-align: left;">
+			<a href="/about/">About</a><br />
+			<a href="/funding-opportunities/">Funding Opportunities</a><br />
+			<a href="/programs/">Programs</a><br />
+			<a href="/success-stories/">Success Stories</a><br />
+			<a href="/tools/">Tools</a><br />
+			<a href="/news/">Newsroom</a><br />
+			<a href="/contact/">Contact</a>
+		</p>
+	</div>
+	<div class="column small-12 medium-6" align="center" style="margin-left: -15px;">
+		<p style="text-align: left;">
+			<a href="/privacy/policy/" title="Privacy Policy">Privacy Policy</a><br />
+			<a href="/foia/" title="FOIA">FOIA</a><br />
+			<a href="/guidance/" title="EDA Guidance Documents">EDA Guidance Documents</a><br />
+			<a href="https://www.commerce.gov/about/policies/information-quality" title="Information Quality">Information Quality</a><br />
+			<a href="/guidance/" title="Guidance Documents">Guidance Documents</a><br />
+			<a href="/archives/" title="EDA Archives">EDA Archives</a><br />
+			<a href="/about/disclaimer/" title="Fraud Alert Disclaimer">Fraud Alert Disclaimer</a><br />
+			<a href="/about/links/" title="Important Links">Important Links</a>
+		</p>
+	</div>
+</div>
+	
+
+	</div>
+</div>
+	
+
+
+	<p style="color: #fff;" align="center">
+		<a href="https://www.usa.gov/" title="USA.gov Homepage">USA.gov</a> |
+		<a href="https://www.commerce.gov/" title="Department of Commerce Homepage">Commerce.gov</a> |
+		<a href="/" title="EDA Homepage">EDA.gov</a>
+	</p>
+
+</footer>
+	  
+
+<section class="section_ltgrey">
+	
+		<h3 style="margin: 0 15px 0 0; font-size: 16px;" align="right">
+		<a href="http://www.facebook.com/eda.commerce"><img src="/img/social/Facebook-color.png" width="25px" height="25px" alt="Facebook icon" /></a>
+		<a href="https://twitter.com/US_EDA"><img src="/img/social/Twitter-color.png" width="25px" height="25px" alt="Twitter icon" /></a>
+		<a href="https://www.linkedin.com/company/us-department-of-commerce-economic-development-administration"><img src="/img/social/Linkedin-color.png" width="25px" height="25px" alt="LinkedIn icon" /></a>
+		<a href="https://www.youtube.com/user/EDACommerce"><img src="/img/social/YouTube-color.png" width="25px" height="25px" alt="YouTube icon" /></a></h3>
+		  
+</section>
+
+
+	<!-- Foundation scripts -->
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <!--REMOVED TO FIX NEW SERVER ISSUE 4.29.2020 -->
+	<!--script>
+      $(document).foundation();
+	  $(window).on('resize',function(){location.reload();});
+	  $(function() {
+		$(".rslides").responsiveSlides();
+	  });
+    </script-->
+	
+	<!-- Nivo Slider scripts -->
+	<script type="text/javascript" src="/js/nivo-slider/jquery.nivo.slider.js"></script> 
+
+	<script type="text/javascript">
+		$(window).load(function() { 
+		$('#slider').nivoSlider(); 
+			effect:'fade'
+		}); 
+	</script>
+	
+	<!-- Responsive Image Map scripts -->
+	<script type="text/javascript" src="/js/imageMapResizer.min.js"></script>
+	<script type="text/javascript">
+
+		$('map').imageMapResize();
+
+	</script>
+
+  </body>
+<!-- InstanceEnd --></html>
